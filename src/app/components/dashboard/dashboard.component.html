@@ -24,15 +24,14 @@
       </nav>
 
       <main class="col-md-10">
+        <h1 class="h2">Dashboard</h1>
         <div
           class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
           <table class="table" *ngIf="onUsers">
             <thead>
               <tr>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
-                <th scope="col">Username</th>
                 <th scope="col">Email</th>
                 <th scope="col">Password</th>
                 <th scope="col">Phone</th>
@@ -40,10 +39,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let user of users">
-                <th scope="row">1</th>
                 <td>{{user.firstName}}</td>
                 <td>{{user.lastName}}</td>
-                <td>{{user.username}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.password}}</td>
                 <td>{{user.phone}}</td>
@@ -54,18 +51,37 @@
             <thead>
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Host</th>
+                <th scope="col">Host ID</th>
                 <th scope="col">Location</th>
                 <th scope="col">Price</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let listing of listings">
-                <th scope="row">1</th>
                 <td>{{listing.name}}</td>
-                <td>{{listing.host.username}}</td>
+                <td>{{listing.hostID}}</td>
                 <td>{{listing.location}}</td>
                 <td>{{listing.price}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table" *ngIf="onBookingRequests">
+            <thead>
+              <tr>
+                <th scope="col">Rental ID</th>
+                <th scope="col">Guest ID</th>
+                <th scope="col">Date From</th>
+                <th scope="col">Date To</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let booking of bookings">
+                <td>{{booking.rentalID}}</td>
+                <td>{{booking.userID}}</td>
+                <td>{{booking.dateFrom}}</td>
+                <td>{{booking.dateTo}}</td>
+                <td>{{booking.status}}</td>
               </tr>
             </tbody>
           </table>
